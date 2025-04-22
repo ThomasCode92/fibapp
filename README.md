@@ -11,9 +11,8 @@ multi-service web applications.
 
 > Much of the inspiration for this project comes from
 > _[Docker and Kubernetes - The Complete Guide](https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide)_
-> by Stephen Grider.  
-> For those aiming to master \_Docker and Kubernetes, this resource is highly
-> recommended.
+> by Stephen Grider. For those aiming to master \_Docker and Kubernetes, this
+> resource is highly recommended.
 
 ## Application Overview
 
