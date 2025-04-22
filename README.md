@@ -10,9 +10,16 @@ providing a comprehensive environment for building, deploying, and scaling
 multi-service web applications.
 
 > Much of the inspiration for this project comes from
-> _[Docker and Kubernetes - The Complete Guide](https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/learn/lecture/11437198#overview)_
-> by Stephen Grider. For those aiming to master Docker and Kubernetes, this
+> _[Docker and Kubernetes - The Complete Guide](https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide)_
+> by Stephen Grider. For those aiming to master \_Docker and Kubernetes, this
 > resource is highly recommended.
+
+## Application Overview
+
+![architecture diagram](./images/architecture.excalidraw.png)
+
+- **React Server**: A [React](https://react.dev/) application built with
+  [vite](https://vite.dev/) and styled with [Pico CSS](https://picocss.com/).
 
 ## Monorepo Setup with Turborepo 📂
 
@@ -32,7 +39,7 @@ shared configurations and scripts for easier maintenance and scalability.
 ### Apps and Packages
 
 - `@repo/eslint-config`: `eslint` configurations (includes
-  `eslint-config-prettier`)
+  `eslint-plugin-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
 
 This Turborepo has some additional tools already setup:
