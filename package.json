@@ -12,6 +12,9 @@
     "clean": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +",
     "prepare": "husky"
   },
+  "lint-staged": {
+    "*": "true"
+  },
   "devDependencies": {
     "husky": "^9.1.7",
     "lint-staged": "^15.5.1",
