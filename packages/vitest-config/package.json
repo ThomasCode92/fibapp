@@ -1,0 +1,11 @@
+{
+  "name": "@repo/vitest-config",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.2"
+  }
+}
