@@ -4,14 +4,17 @@
   "type": "module",
   "private": true,
   "exports": {
-    "./base": "./dist/base-config.js",
-    "./ui": "./dist/ui-config.js"
+    "./base": "./dist/configs/base-config.js",
+    "./ui": "./dist/configs/ui-config.js"
   },
   "scripts": {
     "build": "tsc"
   },
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@types/node": "^22.15.2",
     "jsdom": "^26.1.0",
     "typescript": "^5.8.3",
     "vitest": "^3.1.2"
