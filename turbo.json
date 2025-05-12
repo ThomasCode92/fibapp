@@ -15,6 +15,13 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "test": {
+      "dependsOn": ["^test", "@repo/vitest-config#build"]
+    },
+    "test:watch": {
+      "cache": false,
+      "persistent": true
     }
   }
 }
