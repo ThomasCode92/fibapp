@@ -41,6 +41,7 @@ shared configurations and scripts for easier maintenance and scalability.
 - `@repo/eslint-config`: `eslint` configurations (includes
   `eslint-plugin-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
+- `@repo/vitest-config`: `vitest` configurations, for react and node
 
 This Turborepo has some additional tools already setup:
 
