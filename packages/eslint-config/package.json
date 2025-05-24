@@ -5,10 +5,12 @@
   "private": true,
   "exports": {
     "./base": "./base.js",
-    "./react-internal": "./react-internal.js"
+    "./react-internal": "./react-internal.js",
+    "./testing-library": "./testing-library.js"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
+    "@vitest/eslint-plugin": "^1.2.0",
     "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-only-warn": "^1.1.0",
@@ -16,6 +18,7 @@
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
+    "eslint-plugin-testing-library": "^7.2.1",
     "eslint-plugin-turbo": "^2.4.4",
     "globals": "^16.0.0",
     "typescript": "^5.8.2",
