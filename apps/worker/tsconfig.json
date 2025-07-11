@@ -5,6 +5,8 @@
     "moduleResolution": "node",
     "module": "preserve",
 
+    "types": ["vitest/globals"],
+
     /* Resolving modules */
     "baseUrl": "./",
     "paths": { "~/*": ["src/*"] }
