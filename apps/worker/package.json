@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "tsx watch --env-file=.env.local src/index.ts",
     "start": "tsx src/index.ts",
     "check-types": "tsc --noEmit"
   },
@@ -13,5 +13,8 @@
     "@types/node": "^22.15.2",
     "tsx": "^4.19.4",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@redis/client": "^5.5.6"
   }
 }
