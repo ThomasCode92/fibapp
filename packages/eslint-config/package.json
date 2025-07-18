@@ -5,6 +5,7 @@
   "private": true,
   "exports": {
     "./base": "./base.js",
+    "./node-app": "./node-app.js",
     "./react-internal": "./react-internal.js",
     "./testing-library": "./testing-library.js"
   },
@@ -13,6 +14,7 @@
     "@vitest/eslint-plugin": "^1.2.0",
     "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-n": "^17.21.0",
     "eslint-plugin-only-warn": "^1.1.0",
     "eslint-plugin-prettier": "^5.2.6",
     "eslint-plugin-react": "^7.37.4",
