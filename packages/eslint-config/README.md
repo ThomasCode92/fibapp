@@ -24,3 +24,17 @@ import { config as testingLibraryConfig } from "@repo/eslint-config/testing-libr
 
 export default [...baseConfig, { ...testingLibraryConfig }];
 ```
+
+### NodeJS Application
+
+```typescript
+import { config } from "@repo/eslint-config/node-app";
+
+export default config;
+```
+
+When working with TypeScript, ensure the extension is set to `.ts`:
+
+```typescript
+export default [...baseConfig, { settings: { n: { tryExtensions: [".ts"] } } }];
+```
