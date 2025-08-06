@@ -1,0 +1,15 @@
+{
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    /* Bundler mode */
+    "moduleResolution": "node",
+    "module": "preserve",
+
+    "types": ["vitest/globals"],
+
+    /* Resolving modules */
+    "baseUrl": "./",
+    "paths": { "~/*": ["src/*"] }
+  },
+  "include": ["src"]
+}
