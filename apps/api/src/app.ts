@@ -1,9 +1,10 @@
 import express, { type Express } from "express";
 
-const app: Express = express();
+import { redis } from "~/clients/redis";
 
-app.get("/", (req, res) => {
-  res.json({ message: "Hello from the API!" });
+export const app: Express = express();
+
+app.get("/", async (_req, res) => {
+  const count = await redis.incr("count");
+  res.json({ message: `Hello from the API! You are visitor number ${count}.` });
 });
-
-export { app };
