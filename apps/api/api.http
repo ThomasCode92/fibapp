@@ -1,0 +1,14 @@
+@hostname = localhost
+@port = 8000
+
+
+### GET all values
+
+GET /api/values HTTP/1.1
+Host: {{hostname}}:{{port}}
+
+
+### GET all calculated values
+
+GET /api/values/calculated HTTP/1.1
+Host: {{hostname}}:{{port}}
