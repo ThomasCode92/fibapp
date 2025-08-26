@@ -8,6 +8,16 @@ GET /api/values HTTP/1.1
 Host: {{hostname}}:{{port}}
 
 
+### POST values
+
+POST /api/values HTTP/1.1
+Host: {{hostname}}:{{port}}
+
+{
+  "index": 5
+}
+
+
 ### GET all calculated values
 
 GET /api/values/calculated HTTP/1.1
