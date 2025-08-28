@@ -11,7 +11,13 @@ export async function getAllValues(_req: Request, res: Response) {
 
 export async function getAllCalculatedValues(_req: Request, res: Response) {
   const values = await redisClient.hGetAll("values");
-  return res.json({ message: "data retrieved successfully", data: values });
+  const data = Object.fromEntries(
+    Object.entries(values).map(([key, value]) => [
+      key.replace("fib:", ""),
+      value,
+    ]),
+  );
+  return res.json({ message: "data retrieved successfully", data });
 }
 
 export async function postValue(req: Request, res: Response) {
