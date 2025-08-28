@@ -17,6 +17,15 @@ export async function getAllCalculatedValues(_req: Request, res: Response) {
 export async function postValue(req: Request, res: Response) {
   try {
     const { index } = indexSchema.parse(req.body);
+    const publisher = redisClient.duplicate();
+
+    // insert into redis, and publish the index to the worker
+    await publisher.connect();
+    await redisClient.hSet("values", `fib:${index}`, "");
+    await publisher.publish("message", index.toString());
+
+    // TODO: store the index in the database
+
     return res.status(201).json({ message: "data stored successfully" });
   } catch (error) {
     if (error instanceof ZodError) {
