@@ -18,7 +18,7 @@ await sub.connect();
 const listener = async (message: string, channel: string) => {
   console.log(`Received message "${message}" from channel "${channel}"`);
   const fibNum = fib(Number(message));
-  await client.set(`fib:${message}`, fibNum);
+  await client.hSet("values", `fib:${message}`, fibNum);
   const result = await client.get(`fib:${message}`);
   console.log(`Fibonacci of ${message} is ${result}`);
 };

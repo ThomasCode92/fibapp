@@ -1,0 +1,19 @@
+services:
+  # start redis, and ensure that data is stored to a named volume
+  redis:
+    image: "redis:alpine"
+    ports:
+      - "6379:6379"
+    restart: always
+    volumes:
+      - redis-data:/data
+    networks:
+      - fibapp-net
+
+volumes:
+  redis-data:
+    name: redis-data
+
+networks:
+  fibapp-net:
+    external: true
