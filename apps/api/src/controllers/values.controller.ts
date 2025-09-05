@@ -8,7 +8,8 @@ import { IndexSchema, indexSchema } from "~/utils/schema.utils";
 
 export async function getAllValues(_req: Request, res: Response) {
   const data = await prismClient.fibonacci.findMany();
-  return res.json({ message: "data retrieved successfully", data });
+  const values = data.map(d => d.number);
+  return res.json({ message: "data retrieved successfully", data: values });
 }
 
 export async function getAllCalculatedValues(_req: Request, res: Response) {
