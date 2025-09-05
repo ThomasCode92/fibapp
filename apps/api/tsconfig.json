@@ -2,7 +2,7 @@
   "extends": "@repo/typescript-config/base.json",
   "compilerOptions": {
     /* Bundler mode */
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "module": "preserve",
 
     "types": ["vitest/globals"],
