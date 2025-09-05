@@ -7,7 +7,7 @@
 
     /* Resolving modules */
     "baseUrl": "./",
-    "paths": { "~/*": ["src/*"], "~/prisma": ["generated/prisma"] }
+    "paths": { "~/*": ["src/*"] }
   },
   "include": ["src"]
 }
