@@ -2,18 +2,22 @@
   "name": "@repo/db",
   "private": true,
   "version": "0.0.0",
+  "type": "module",
   "exports": {
     ".": "./src/index.ts"
   },
   "scripts": {
     "db:generate": "dotenv -e .env.local -- prisma generate",
     "db:migrate": "dotenv -e .env.local -- prisma migrate dev --skip-generate",
-    "db:studio": "dotenv -e .env.local -- prisma studio"
+    "db:studio": "dotenv -e .env.local -- prisma studio",
+    "lint": "eslint . --ignore-pattern 'generated/**'",
+    "check-types": "tsc --noEmit"
   },
   "dependencies": {
     "@prisma/client": "^6.15.0"
   },
   "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@types/node": "^22.15.2",
     "dotenv-cli": "^10.0.0",

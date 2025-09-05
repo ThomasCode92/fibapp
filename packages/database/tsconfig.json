@@ -1,6 +1,10 @@
 {
   "extends": "@repo/typescript-config/base.json",
   "compilerOptions": {
+    /* Bundler mode */
+    "moduleResolution": "node",
+    "module": "preserve",
+
     /* Resolving modules */
     "baseUrl": "./",
     "paths": { "~/*": ["src/*"], "~/prisma": ["generated/prisma"] }
