@@ -2,6 +2,9 @@
   "name": "@repo/db",
   "private": true,
   "version": "0.0.0",
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "scripts": {
     "db:generate": "dotenv -e .env.local -- prisma generate",
     "db:migrate": "dotenv -e .env.local -- prisma migrate dev --skip-generate",
@@ -11,7 +14,10 @@
     "@prisma/client": "^6.15.0"
   },
   "devDependencies": {
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^22.15.2",
     "dotenv-cli": "^10.0.0",
-    "prisma": "^6.15.0"
+    "prisma": "^6.15.0",
+    "typescript": "^5.9.2"
   }
 }

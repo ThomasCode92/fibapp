@@ -1,0 +1,9 @@
+{
+  "extends": "@repo/typescript-config/base.json",
+  "compilerOptions": {
+    /* Resolving modules */
+    "baseUrl": "./",
+    "paths": { "~/*": ["src/*"], "~/prisma": ["generated/prisma"] }
+  },
+  "include": ["src"]
+}

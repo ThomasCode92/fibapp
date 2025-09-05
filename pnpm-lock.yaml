@@ -142,14 +142,23 @@ importers:
     dependencies:
       '@prisma/client':
         specifier: ^6.15.0
-        version: 6.15.0(prisma@6.15.0(typescript@5.8.3))(typescript@5.8.3)
+        version: 6.15.0(prisma@6.15.0(typescript@5.9.2))(typescript@5.9.2)
     devDependencies:
+      '@repo/typescript-config':
+        specifier: workspace:*
+        version: link:../typescript-config
+      '@types/node':
+        specifier: ^22.15.2
+        version: 22.15.2
       dotenv-cli:
         specifier: ^10.0.0
         version: 10.0.0
       prisma:
         specifier: ^6.15.0
-        version: 6.15.0(typescript@5.8.3)
+        version: 6.15.0(typescript@5.9.2)
+      typescript:
+        specifier: ^5.9.2
+        version: 5.9.2
 
   packages/eslint-config:
     devDependencies:
@@ -2673,6 +2682,11 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  typescript@5.9.2:
+    resolution: {integrity: sha512-CWBzXQrc/qOkhidw1OzBTQuYRbfyxDXJMVJ1XNwUHGROVmuaeiEm3OslpZ1RV96d7SKKjZKrSJu3+t/xlw3R9A==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
   unbox-primitive@1.1.0:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
     engines: {node: '>= 0.4'}
@@ -3181,10 +3195,10 @@ snapshots:
 
   '@pkgr/core@0.2.4': {}
 
-  '@prisma/client@6.15.0(prisma@6.15.0(typescript@5.8.3))(typescript@5.8.3)':
+  '@prisma/client@6.15.0(prisma@6.15.0(typescript@5.9.2))(typescript@5.9.2)':
     optionalDependencies:
-      prisma: 6.15.0(typescript@5.8.3)
-      typescript: 5.8.3
+      prisma: 6.15.0(typescript@5.9.2)
+      typescript: 5.9.2
 
   '@prisma/config@6.15.0':
     dependencies:
@@ -4999,12 +5013,12 @@ snapshots:
       ansi-styles: 5.2.0
       react-is: 17.0.2
 
-  prisma@6.15.0(typescript@5.8.3):
+  prisma@6.15.0(typescript@5.9.2):
     dependencies:
       '@prisma/config': 6.15.0
       '@prisma/engines': 6.15.0
     optionalDependencies:
-      typescript: 5.8.3
+      typescript: 5.9.2
     transitivePeerDependencies:
       - magicast
 
@@ -5524,6 +5538,8 @@ snapshots:
   typescript@5.8.2: {}
 
   typescript@5.8.3: {}
+
+  typescript@5.9.2: {}
 
   unbox-primitive@1.1.0:
     dependencies:
