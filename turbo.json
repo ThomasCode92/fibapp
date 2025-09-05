@@ -3,6 +3,13 @@
   "globalEnv": ["REDIS_HOST", "REDIS_PORT", "PORT"],
   "ui": "tui",
   "tasks": {
+    "db:generate": {
+      "cache": false
+    },
+    "db:migrate": {
+      "cache": false,
+      "persistent": true
+    },
     "build": {
       "dependsOn": ["^build"],
       "inputs": ["$TURBO_DEFAULT$", ".env*"]
