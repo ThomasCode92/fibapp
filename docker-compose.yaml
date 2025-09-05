@@ -5,6 +5,8 @@ services:
     ports:
       - "5432:5432"
     restart: always
+    env_file:
+      - ./packages/database/.env.local
     volumes:
       - pg-data:/var/lib/postgresql/data/
   # start redis, and ensure that data is stored to a named volume
