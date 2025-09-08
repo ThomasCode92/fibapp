@@ -21,8 +21,12 @@ Make sure the necessary tools are installed, check the root
 API service with the following commands:
 
 ```bash
-# Start Redis in a Docker container
-docker run --name redis-server -p 6379:6379 -d redis
+# Start Redis and Postgres in a Docker container
+docker run --name redis-server -p 6379:6379 -d --rm redis:alpine
+docker run --name postgres --env-file .env.local -p 5432:5432 -d --rm postgres:17
+
+# Migrate the database, using the database package of the monorepo
+pnpm run --filter=@repo/db db:migrate
 
 # Start the API Service in development mode
 pnpm run dev
