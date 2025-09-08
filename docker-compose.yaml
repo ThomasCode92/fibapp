@@ -1,4 +1,14 @@
 services:
+  # start postgres, and ensure that data is stored to a named volume
+  database:
+    image: "postgres:17"
+    ports:
+      - "5432:5432"
+    restart: always
+    env_file:
+      - ./packages/database/.env.local
+    volumes:
+      - pg-data:/var/lib/postgresql/data/
   # start redis, and ensure that data is stored to a named volume
   redis:
     image: "redis:alpine"
@@ -13,6 +23,8 @@ services:
 volumes:
   redis-data:
     name: redis-data
+  pg-data:
+    name: pg-data
 
 networks:
   fibapp-net:
