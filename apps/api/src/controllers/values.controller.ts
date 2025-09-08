@@ -1,13 +1,13 @@
 import type { Request, Response } from "express";
 import z, { ZodError } from "zod";
 
-import { prisma as prismClient } from "@repo/db";
+import { prisma as prismaClient } from "@repo/db";
 
 import { redisClient } from "~/clients/redis.client";
 import { IndexSchema, indexSchema } from "~/utils/schema.utils";
 
 export async function getAllValues(_req: Request, res: Response) {
-  const data = await prismClient.fibonacci.findMany();
+  const data = await prismaClient.fibonacci.findMany();
   const values = data.map(d => d.number);
   return res.json({ message: "data retrieved successfully", data: values });
 }
@@ -33,7 +33,7 @@ export async function postValue(req: Request, res: Response) {
     await redisClient.hSet("values", `fib:${index}`, "");
     await publisher.publish("message", index.toString());
 
-    await prismClient.fibonacci.create({ data: { number: index } });
+    await prismaClient.fibonacci.create({ data: { number: index } });
 
     return res.status(201).json({ message: "data stored successfully" });
   } catch (error) {
