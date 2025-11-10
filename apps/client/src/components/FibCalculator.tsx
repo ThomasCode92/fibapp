@@ -1,11 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
-import { fetchAllValues } from "~/api/queries";
+import { useFibValues } from "~/hooks/use-fib-values";
 
 export default function FibCalculator() {
-  const { data: response } = useQuery<{ message: string; data: number[] }>({
-    queryKey: ["values"],
-    queryFn: fetchAllValues,
-  });
+  const { data: response } = useFibValues();
 
   if (!response) return null; // TODO: Handle loading state
 
