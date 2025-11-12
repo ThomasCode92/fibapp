@@ -3,6 +3,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 import FibCalculatedValues from "~/components/FibCalculatedValues";
 import FibIndices from "~/components/FibIndices";
+import SubmitIndexForm from "~/components/SubmitIndexForm";
 
 import "./App.css";
 
@@ -18,6 +19,7 @@ export default function App() {
         </hgroup>
         <FibIndices />
         <FibCalculatedValues />
+        <SubmitIndexForm />
       </main>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
