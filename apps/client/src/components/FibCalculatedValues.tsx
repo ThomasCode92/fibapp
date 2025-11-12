@@ -1,20 +1,12 @@
-import { useFibCalculatedValues, useFibValues } from "~/hooks/use-fib-values";
+import { useFibCalculatedValues } from "~/hooks/use-fib-values";
 
-export default function FibCalculator() {
-  const { data: valuesResponse } = useFibValues();
+export default function FibCalculatedValues() {
   const { data: calculatedValuesResponse } = useFibCalculatedValues();
 
-  if (!valuesResponse || !calculatedValuesResponse) return null; // TODO: Handle loading state
+  if (!calculatedValuesResponse) return null; // TODO: Handle loading state
 
   return (
     <section>
-      <h2>Indices I have seen:</h2>
-      <ul>
-        {valuesResponse.data.length === 0 && <li>No indices found, yet.</li>}
-        {valuesResponse.data.map(number => (
-          <li key={number}>{number}</li>
-        ))}
-      </ul>
       <h2>Calculated Values:</h2>
       <ul>
         {Object.entries(calculatedValuesResponse.data).length === 0 && (

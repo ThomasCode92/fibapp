@@ -1,11 +1,14 @@
 import { render, screen } from "@testing-library/react";
 
-import * as FibCalculator from "~/components/FibCalculator";
+import * as FibCalculatedValues from "~/components/FibCalculatedValues";
+import * as FibIndices from "~/components/FibIndices";
 
 import App from "./App";
 
-const fibCalculatorSpy = vi
-  .spyOn(FibCalculator, "default")
+const fibIndicesSpy = vi.spyOn(FibIndices, "default").mockReturnValue(<div />); // mock to avoid invoking api calls
+
+const fibCalculatedValuesSpy = vi
+  .spyOn(FibCalculatedValues, "default")
   .mockReturnValue(<div />); // mock to avoid invoking api calls
 
 beforeEach(() => {
@@ -20,7 +23,12 @@ test("should render the correct heading and description", () => {
   expect(descriptionEl).toBeInTheDocument();
 });
 
-test("should render the FibCalculator component", () => {
+test("should render the FibIndices component", () => {
   render(<App />);
-  expect(fibCalculatorSpy).toHaveBeenCalledOnce();
+  expect(fibIndicesSpy).toHaveBeenCalledOnce();
+});
+
+test("should render the FibCalculatedValues component", () => {
+  render(<App />);
+  expect(fibCalculatedValuesSpy).toHaveBeenCalledOnce();
 });

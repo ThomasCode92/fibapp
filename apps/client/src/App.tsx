@@ -1,7 +1,8 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
-import FibCalculator from "~/components/FibCalculator";
+import FibCalculatedValues from "~/components/FibCalculatedValues";
+import FibIndices from "~/components/FibIndices";
 
 import "./App.css";
 
@@ -15,7 +16,8 @@ export default function App() {
           <h1>FibApp – A Fibonacci Calculator</h1>
           <p>Find out the value of your favorite Fibonacci number!</p>
         </hgroup>
-        <FibCalculator />
+        <FibIndices />
+        <FibCalculatedValues />
       </main>
       <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>
