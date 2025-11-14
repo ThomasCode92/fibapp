@@ -1,5 +1,6 @@
-import { useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery } from "@tanstack/react-query";
 
+import { submitIndex } from "~/api/mutations";
 import { fetchAllCalculatedValues, fetchAllValues } from "~/api/queries";
 
 type FibValuesResponse = {
@@ -24,4 +25,8 @@ export function useFibCalculatedValues() {
     queryKey: ["values", "calculated"],
     queryFn: fetchAllCalculatedValues,
   });
+}
+
+export function useSubmitFibIndex() {
+  return useMutation({ mutationFn: (index: number) => submitIndex(index) });
 }

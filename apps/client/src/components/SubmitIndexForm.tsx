@@ -1,11 +1,16 @@
 import { FormEvent, Fragment, useState } from "react";
 
+import { useSubmitFibIndex } from "~/hooks/use-fib-values";
+
 export default function SubmitIndexForm() {
   const [inputValue, setInputValue] = useState("");
+
+  const { mutate } = useSubmitFibIndex();
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     console.log("Form submitted with index:", inputValue);
+    mutate(Number(inputValue));
   }
 
   return (
